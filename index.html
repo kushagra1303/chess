@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Chess Game</title>
+    <style>
+        #board .square {
+            width: 48px;
+            height: 48px;
+            display: inline-block;
+        }
+        .black {
+            background-color: #769656;
+        }
+        .white {
+            background-color: #eeeed2;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<body class="bg-gray-100">
+
+    <!-- Registration Form -->
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center">Online Chess</h1>
+        
+        <div id="register" class="my-8">
+            <h2 class="text-2xl font-bold">Register</h2>
+            <form id="registerForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="regUsername" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="regEmail" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="regPassword" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md">Register</button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login" class="my-8">
+            <h2 class="text-2xl font-bold">Login</h2>
+            <form id="loginForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="loginUsername" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="loginPassword" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <button type="submit" class="w-full py-2 px-4 bg-blue-500 text-white font-bold rounded-md">Login</button>
+            </form>
+        </div>
+
+        <!-- Game Creation Form -->
+        <div id="createGame" class="my-8">
+            <h2 class="text-2xl font-bold">Create Game</h2>
+            <form id="createGameForm" class="space-y-4">
+                <button type="submit" class="w-full py-2 px-4 bg-green-500 text-white font-bold rounded-md">Create New Game</button>
+            </form>
+        </div>
+
+        <!-- Join Game Form -->
+        <div id="joinGame" class="my-8">
+            <h2 class="text-2xl font-bold">Join Game</h2>
+            <form id="joinGameForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Game ID</label>
+                    <input type="text" id="joinGameId" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <button type="submit" class="w-full py-2 px-4 bg-green-500 text-white font-bold rounded-md">Join Game</button>
+            </form>
+        </div>
+
+        <!-- Chess Board -->
+        <div id="chessBoard" class="my-8">
+            <h2 class="text-2xl font-bold">Chess Board</h2>
+            <div id="board" class="grid grid-cols-8 gap-0 w-96 mx-auto">
+                <!-- Dynamically render chess board here -->
+            </div>
+            <div id="controls" class="mt-4 text-center">
+                <button id="resetBoard" class="py-2 px-4 bg-red-500 text-white font-bold rounded-md">Reset Board</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="chess.js"></script>
+</body>
+</html>
